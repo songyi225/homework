@@ -1,0 +1,115 @@
+.main {
+  display: flow-root;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.avartar_img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.woman {
+  float: left;
+  position: relative;
+}
+
+.woman:nth-child(n+2){
+  margin-left: 20px;
+}
+
+.man {
+  float: left;
+  position: relative;
+}
+
+.man:nth-child(n+2) {
+  margin-left: 20px;
+}
+
+/* -------------------------------- */
+/* ------ 동그라미 on/off ----------- */
+/* -------------------------------- */
+.on {
+  position: absolute;
+  background-color: #4CFE88;
+  width: 20px;
+  height: 20px;
+  border: 0.5px solid white;
+  border-radius: 100%;
+  margin-left: 70%;
+  margin-top: -40%;
+}
+
+.off {
+  position: absolute;
+  background-color: #DBDBDB;
+  width: 20px;
+  height: 20px;
+  border: 0.5px solid white;
+  border-radius: 100%;
+  margin-left: 70%;
+  margin-top: -40%;
+}
+
+/* -------------------------------- */
+/* ----------- flex 사용 ----------- */
+/* -------------------------------- */
+
+@supports (display: flex) {
+  /* 사용자 환경에서 flex를 지원하면 이걸 해석하겠다! */
+
+  .main {
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .woman_list {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+  }
+
+  .woman:nth-child(n+2){
+    margin-left: 20px;
+  }
+
+  .man_list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    order: -1;
+  }
+
+  .man:nth-child(n+2) {
+    margin-left: 20px;
+  }
+
+  .on {
+    position: relative;
+    background-color: #4CFE88;
+    width: 20px;
+    height: 20px;
+    border: 0.5px solid white;
+    border-radius: 100%;
+    margin-left: 70%;
+    margin-top: -40%;
+  }
+
+  .off {
+    position: relative;
+    background-color: #DBDBDB;
+    width: 20px;
+    height: 20px;
+    border: 0.5px solid white;
+    border-radius: 100%;
+    margin-left: 70%;
+    margin-top: -40%;
+  }
+}
