@@ -1,9 +1,4 @@
-# 240503 과제
-
-- html 구조 설계
-- float, flex 활용하여 css 구현
-
-<br/>
+# 240504 과제 설명
 
 ## :pushpin: 마크업 구조
 ![markup](../images/markup_structure.png)
