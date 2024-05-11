@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>네이버 로그인</title>
+  <link rel="stylesheet" href="/naver/naver.css" />
+</head>
+<body>
+  <!--네이버 로고-->
+  <h1 class="logo">
+    <a href="https://www.naver.com/" target="_blank" class="logo-link">
+      <img srcset="/naver/naver-logo.svg, /naver/naver-logo.png" alt="네이버" />
+    </a>
+  </h1>
+
+  <!--폼-->
+  <form action="/" class="login-form">
+    <input type="email" id="userEmail" required placeholder="아이디(이메일)" name="userEmail" />
+    <input type="password" id="userPwd" required placeholder="비밀번호" name="userPwd" />
+    <button type="submit" class="login-btn">로그인</button>
+  </form>
+
+  <!-- 로그인 상태 유지 & IP 보안 -->
+  <div role="group" class="login-setting">
+    
+    <div class="login-status-keep">
+      <input type="checkbox" id="statusKeep" name="statusKeep" />
+      <label for="statusKeep">로그인 상태 유지</label>
+    </div>
+
+    <div class="ip-security" >
+      <a href="/naver/ip_security.html" class="ip-security-info" target="_blank">IP 보안</a>
+      <input type="checkbox" id="ipSecurity" name="ipSecurity"/>
+      <span class="on-off"></span>
+    </div>
+
+  </div>
+
+</body>
+</html>

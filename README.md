@@ -3,6 +3,9 @@
 
 ### 목록
 
-* [240504 첫번째 과제 :link:](./avatars/avatars.md)
+* [240504 첫번째 과제 :link:](/avatars/avatars.md)
   * float, flex 활용한 css 구현 및 html 구조 설계
-* 
+
+* [240511 두번째 과제 :link:](/naver/naver.md)
+  * 접근성을 고려한 마크업
+  * 반응형 스타일링
