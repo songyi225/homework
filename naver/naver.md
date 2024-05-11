@@ -50,7 +50,7 @@
   <div class="ip-security" >
     <a href="/naver/ip_security.html" class="ip-security-info" target="_blank">IP 보안</a>
     <input type="checkbox" id="ipSecurity" name="ipSecurity"/>
-    <span class="on-off"></span>
+    <span role="switch" class="on-off"></span>
   </div>
 
 </div>
@@ -58,6 +58,7 @@
 
 - 모바일, 데스크탑 환경에 따라 IP 보안 영역을 보이거나 보이지 않게끔 하기 위해 두 개의 영역을 묶었습니다. (굳이 묶어야할까 고민했지만..)
 - IP 보안 영역에서 체크박스 대신 ON/OFF 글자를 가상 요소 선택자로 추가하기 위해 `<span>` 태그를 선언해두었습니다.
+- `<span>` 태그에는 `role="switch"`로 역할을 부여해주었습니다.
 
 <br/>
 
