@@ -10,32 +10,49 @@
   <!--네이버 로고-->
   <h1 class="logo">
     <a href="https://www.naver.com/" target="_blank" class="logo-link">
-      <img srcset="/naver/naver-logo.svg, /naver/naver-logo.png" alt="네이버" />
+      <picture>
+        <source srcset="/naver/naver-logo.svg, /naver/naver-logo.png"/>
+        <img src="/naver/naver-logo.svg" alt="네이버" />
+      </picture>
     </a>
   </h1>
 
-  <!--폼-->
+  <!--폼 전체-->
   <form action="/" class="login-form">
-    <input type="email" id="userEmail" required placeholder="아이디(이메일)" name="userEmail" />
-    <input type="password" id="userPwd" required placeholder="비밀번호" name="userPwd" />
-    <button type="submit" class="login-btn">로그인</button>
-  </form>
 
-  <!-- 로그인 상태 유지 & IP 보안 -->
-  <div role="group" class="login-setting">
-    
-    <div class="login-status-keep">
+    <!-- 아이디 & 비밀번호 입력 -->
+    <div class="login-form-input">
+      <div role="group" class="input-group">
+        <label for="userEmail" class="sr-only">아이디</label>
+        <input type="email" id="userEmail" required placeholder="아이디(이메일)" name="userEmail" />
+      </div>
+      <div role="group" class="input-group">
+        <label for="userPwd" class="sr-only">비밀번호</label>
+        <input type="password" id="userPwd" required placeholder="비밀번호" name="userPwd" />
+      </div>
+    </div>
+
+  <!-- 로그인 상태 유지 & IP 보안 묶음 영역 -->
+  <div class="login-setting">
+      
+    <!-- 로그인 상태 유지 -->
+    <div role="group" class="form-checkbox login-status-keep">
       <input type="checkbox" id="statusKeep" name="statusKeep" />
       <label for="statusKeep">로그인 상태 유지</label>
     </div>
 
-    <div class="ip-security" >
+    <!-- IP 보안 -->
+    <div role="group" class="form-checkbox ip-security" >
       <a href="/naver/ip_security.html" class="ip-security-info" target="_blank">IP 보안</a>
-      <input type="checkbox" id="ipSecurity" name="ipSecurity"/>
-      <span role="switch" class="on-off"></span>
+      <!-- <label for="ipSecurity"></label> -->
+      <input type="checkbox" id="ipSecurity" name="ipSecurity" />
     </div>
 
   </div>
+
+    <button type="submit" class="login-btn">로그인</button>
+  </form>
+
 
 </body>
 </html>

@@ -1,0 +1,9 @@
+@import url(base.css);
+@import url(reset.css);
+@import url(theme.css);
+
+/* 카드 레이아웃 */
+
+.card-component {
+  border: 1px solid blue;
+}

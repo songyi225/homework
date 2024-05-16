@@ -1,3 +1,4 @@
+@import url(/naver/sr-only.css);
 /* 모바일 퍼스트 */
 
 body {
@@ -11,54 +12,92 @@ body {
   margin: 100px auto 50px; /* 위아래 여백 임의로 */
 }
 
-/* form 영역 */
+/* 전체 form */
 .login-form {
   display: flex;
   flex-flow: column nowrap;
-  flex-grow: 1; /* 컨테이너 크기가 커져도 100%를 유지 */
-  gap: 0.625rem; /* 임의로 여백 주었음 - 20px */
+}
+
+/* 아이디 + 비번 영역 */
+.login-form-input {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+
+/* 아이디 비번 인풋 박스 */
+.input-group {
+  display: flex;
+  flex-flow: column nowrap;
 
   input {
-    font-size: 0.875rem; /* 14px */
-    height: 2.8125rem; /* 45px */
+    font-size: 0.875rem;
+    height: 2.8125rem;
     padding: 0 1.25rem 0 1.25rem;
-    /* 플레이스홀더 양쪽 여백 20px */
+    margin: 0 1.25rem 0 1.25rem;
     border: 1px solid #dadada;
-  }
-  
-  input:focus {
-    background-color: #e9f0fd;
-    outline: 1px solid #03cf5d;
+
+    &:focus {
+      background-color: #e9f0fd;
+      outline: 1px solid #03cf5d;
+    }
   }
 
-  /* 버튼 */
-  .login-btn {
-    font-size: 1rem;
-    height: 2.8125rem;
-    color: #fff;
-    background-color: #03cf5d;
-    border: 0;
-    margin-top: 1rem; /* 버튼 위쪽 16px 여백 */
+}
+
+/* 버튼 */
+.login-btn {
+  font-size: 1rem;
+  height: 2.8125rem;
+  color: #fff;
+  background-color: #03cf5d;
+  border: 0;
+  margin: 1rem 1.25rem 0 1.25rem;
+}
+
+/* 하단 로그인 상태 유지 영역과 ip 보안 영역을 합친 영역*/
+.login-setting {
+  order: 1;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  margin-top: 0.625rem; /* 위쪽 여백을 위해 10px */
+  /* margin: 0.625rem 1.25rem 0 0; */
+  padding: 0 1.25rem;
+}
+
+/* 체크박스 스타일링 */
+.form-checkbox {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  /* position: relative; */
+
+  input {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+  }
+
+  input:focus {
+    outline: none;
+  }
+  input:focus-visible {
+    outline: 2px solid #24388d;
   }
 }
 
-
 /* 로그인 상태 유지 영역 */
 .login-status-keep {
-  position: relative;
   order: 1;
 
   input {
     position: absolute;
-    appearance: none;
-    width: 24px;
-    height: 24px;
-    margin: 0;
   }
 
   label {
     background: url(/naver/icons/unchecked.svg) no-repeat 0 0 /contain;
-    padding-left: 1.5625rem; /* 임의로 25px 여백 */
+    padding-left: calc(1.5rem + 0.3125rem);
   }
 
   input:checked + label {
@@ -67,58 +106,53 @@ body {
 }
 
 /* ip 보안 영역 - 모바일에선 숨김 */
-.ip-security {
-  visibility: hidden;
+/* 모바일 */
+@media (max-width: 768px) {
+  .ip-security {
+    display: none;
+  }
 }
 
-/* 하단 로그인 상태 유지 영역과 ip 보안 영역을 합친 영역*/
-.login-setting {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  padding: 0.625rem 0; /* 위쪽 여백을 위해 10px */
-}
+
 
 /* 데스크탑일 때 */
 @media (min-width: 768px) {
 
   /* 로그인 폼 가로크기 조절 */
   .login-form {
+    padding: 0;
     margin: 0 auto;
-    width: 500px;
+    width: 31.25rem;
   }
 
   /* 하단 가로크기 조절 */
   .login-setting {
-    width: 500px;
-    margin: 0 auto;
+    justify-content: space-between;
+    /* padding: 0.625rem 1.25rem 0 1.25rem; */
   }
 
   /* 데스크탑에서는 ip 보안 영역 보임 */
   .ip-security {
-    visibility: visible;
+    display: flex;
+    flex-flow: row nowrap;
     order: 1;
-
-    position: relative;
 
     a {
       text-decoration: none;
     }
 
     input {
-      position: absolute;
-      appearance: none;
-      width: 24px;
-      height: 24px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
     }
 
-    .on-off::after{
+    input::after{
       content: "OFF";
       color:#aaa;
-      font-size: 100%;
     }
 
-    input:checked + .on-off::after {
+    input:checked + input::after {
       content: "ON";
       color: #03cf5d;
     }
