@@ -1,0 +1,69 @@
+@import url(base.css);
+@import url(reset.css);
+@import url(theme.css);
+
+.card-component {
+  height: var(--size);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: var(--small-spacing);
+}
+
+.title {
+  font-weight: 700;
+  font-size: var(--large-text);
+  margin-top: var(--large-spacing);
+}
+
+.callout {
+  font-size: var(--small-text);
+  color: var(--gray);
+}
+
+.sub-title {
+  text-align: center;
+  font-size: var(--base-text);
+  line-height: var(--line-normal);
+}
+
+.button-group {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: var(--base-spacing);
+}
+
+.more-btn, .price-btn {
+  font-size: var(--xx-small-text);
+  padding: var(--x-small-spacing);
+  border-radius: 980px;
+}
+
+.price-btn {
+  background-color: transparent;
+}
+
+article {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* 데스크탑 */
+@media (min-width: 1024px) {
+  .title {
+    font-size: var(--extra-large-text);
+    margin-top: var(--extra-large-spacing);
+  }
+
+  br {
+    display: inline-block;
+    content: " ";
+  }
+  .sub-title {
+    font-size: var(--medium-text);
+  }
+  button {
+    font-size: var(--x-small-text);
+  }
+}
