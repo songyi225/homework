@@ -5,9 +5,13 @@
 .card-component {
   height: var(--size);
   display: flex;
-  flex-flow: column;
+  flex-flow: column nowrap;
   align-items: center;
   gap: var(--small-spacing);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .title {
@@ -35,19 +39,14 @@
 
 .more-btn, .price-btn {
   font-size: var(--xx-small-text);
-  padding: var(--x-small-spacing);
-  border-radius: 980px;
+  padding: var(--x-small-spacing) var(--small-spacing);
+  border-radius: 61.25rem;
 }
 
 .price-btn {
   background-color: transparent;
 }
 
-article {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
 
 /* 데스크탑 */
 @media (min-width: 1024px) {
@@ -59,11 +58,14 @@ article {
   br {
     display: inline-block;
     content: " ";
+    margin: 0 0.125rem;
   }
+
   .sub-title {
     font-size: var(--medium-text);
   }
-  button {
+
+  .more-btn, .price-btn {
     font-size: var(--x-small-text);
   }
 }
